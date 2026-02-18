@@ -1,11 +1,21 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.core.config import settings
-from app.api.v1.api import api_router
 from app.core.database import Base, engine
 
-# Create database tables
-Base.metadata.create_all(bind=engine)
+# Import all models to ensure they're registered with SQLAlchemy
+from app.models.organization import Organization  # noqa
+from app.models.user import User  # noqa
+from app.models.technician import Technician  # noqa
+from app.models.customer import Customer  # noqa
+from app.models.job import Job  # noqa
+from app.models.route import Route  # noqa
+from app.models import JobHistory, Notification, MLModel  # noqa
+
+from app.api.v1.api import api_router
+
+# Note: Database tables should be created using Alembic migrations
+# Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
     title=settings.APP_NAME,

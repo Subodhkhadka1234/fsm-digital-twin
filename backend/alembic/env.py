@@ -7,7 +7,15 @@ from alembic import context
 
 # Import Base from your models
 from app.core.database import Base
-from app.models import *  # noqa - Import all models
+
+# Import models in the correct order
+from app.models.organization import Organization  # noqa
+from app.models.user import User  # noqa
+from app.models.technician import Technician  # noqa
+from app.models.customer import Customer  # noqa
+from app.models.job import Job  # noqa
+from app.models.route import Route  # noqa
+from app.models import JobHistory, Notification, MLModel  # noqa
 
 # this is the Alembic Config object
 config = context.config

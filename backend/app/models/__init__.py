@@ -1,6 +1,6 @@
 import uuid
 import enum
-from sqlalchemy import Column, String, DateTime, Enum as SQLEnum, ForeignKey, Text
+from sqlalchemy import Column, String, DateTime, Enum as SQLEnum, ForeignKey, Text, JSON, Boolean
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
 from datetime import datetime
@@ -70,5 +70,5 @@ class MLModel(Base):
     accuracy_metrics = Column(JSON, default={})
     training_data_range = Column(JSON, default={})
     model_file_path = Column(String, nullable=False)
-    is_active = Column(String, default=False)
+    is_active = Column(Boolean, default=False)
     created_at = Column(DateTime, default=datetime.utcnow)
