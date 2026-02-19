@@ -1,0 +1,162 @@
+╔════════════════════════════════════════════════════════════════╗
+║                                                                ║
+║        🌐 FSM SaaS Platform - WHERE TO ACCESS IT? 🌐           ║
+║                                                                ║
+╚════════════════════════════════════════════════════════════════╝
+
+┌────────────────────────────────────────────────────────────────┐
+│                    ⭐ MAIN APPLICATION ⭐                       │
+│                                                                │
+│  🌟 Frontend (User Interface):                                │
+│     ╔══════════════════════════════════════╗                  │
+│     ║  http://localhost:3000               ║                  │
+│     ╚══════════════════════════════════════╝                  │
+│                                                                │
+│  👉 This is where users login and use the app                 │
+│  👉 Works in any web browser (Chrome, Firefox, Safari)        │
+│  👉 Login page → Dashboard → Features                         │
+│                                                                │
+└────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────┐
+│                   📚 API DOCUMENTATION 📚                      │
+│                                                                │
+│  🔧 Backend API Docs (Swagger UI):                            │
+│     ╔══════════════════════════════════════╗                  │
+│     ║  http://localhost:8000/api/v1/docs   ║                  │
+│     ╚══════════════════════════════════════╝                  │
+│                                                                │
+│  👉 Interactive API testing and documentation                 │
+│  👉 For developers to test endpoints                          │
+│  👉 Try API calls directly in browser                         │
+│                                                                │
+└────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────┐
+│                  🚀 HOW TO START & ACCESS 🚀                   │
+│                                                                │
+│  Step 1: Start the Application                                │
+│  ────────────────────────────                                 │
+│     $ cd fsm-digital-twin                                     │
+│     $ ./start.sh                                              │
+│                                                                │
+│     OR:                                                        │
+│     $ docker compose up -d                                    │
+│                                                                │
+│  Step 2: Wait (30-60 seconds)                                 │
+│  ─────────────────────────────                                │
+│     Services are starting...                                  │
+│     ⏳ PostgreSQL (10 sec)                                     │
+│     ⏳ Redis (5 sec)                                           │
+│     ⏳ Backend API (15 sec)                                    │
+│     ⏳ Frontend (2-5 min first time)                           │
+│                                                                │
+│  Step 3: Open Your Browser                                    │
+│  ───────────────────────────                                  │
+│     🌐 Go to: http://localhost:3000                           │
+│                                                                │
+│  Step 4: Login                                                │
+│  ──────────────                                               │
+│     Email:    admin@example.com                               │
+│     Password: admin123                                        │
+│                                                                │
+└────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────┐
+│                    🔐 LOGIN CREDENTIALS 🔐                     │
+│                                                                │
+│  👨‍💼 Admin:                                                    │
+│     Email:    admin@example.com                               │
+│     Password: admin123                                        │
+│                                                                │
+│  👷 Technician:                                               │
+│     Email:    tech1@example.com                               │
+│     Password: admin123                                        │
+│                                                                │
+│  👤 Customer:                                                  │
+│     Email:    customer1@example.com                           │
+│     Password: admin123                                        │
+│                                                                │
+└────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────┐
+│                    📡 ALL SERVICE URLS 📡                      │
+│                                                                │
+│  Service          │ URL                                       │
+│  ─────────────────┼───────────────────────────────────────   │
+│  Frontend (UI)    │ http://localhost:3000                    │
+│  Backend API      │ http://localhost:8000                    │
+│  API Docs (Swagger) │ http://localhost:8000/api/v1/docs      │
+│  API Docs (ReDoc) │ http://localhost:8000/api/v1/redoc       │
+│  Health Check     │ http://localhost:8000/health             │
+│  Database         │ localhost:5432                           │
+│  Redis            │ localhost:6379                           │
+│                                                                │
+└────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────┐
+│                  🔍 CHECK IF IT'S RUNNING 🔍                   │
+│                                                                │
+│  Command: docker compose ps                                   │
+│                                                                │
+│  Expected output:                                             │
+│  ─────────────────────────────────────────────────────────   │
+│  NAME           STATUS    PORTS                              │
+│  fsm_backend    Up        0.0.0.0:8000->8000/tcp             │
+│  fsm_frontend   Up        0.0.0.0:3000->3000/tcp             │
+│  fsm_postgres   Up        0.0.0.0:5432->5432/tcp             │
+│  fsm_redis      Up        0.0.0.0:6379->6379/tcp             │
+│                                                                │
+└────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────┐
+│                   ❓ TROUBLESHOOTING ❓                        │
+│                                                                │
+│  Problem: "This site can't be reached"                        │
+│  Solution:                                                     │
+│    1. Wait 5 minutes (first build takes time)                │
+│    2. Check status: docker compose ps                        │
+│    3. View logs: docker compose logs frontend                │
+│    4. Restart: docker compose restart frontend               │
+│                                                                │
+│  Problem: "Connection refused"                                │
+│  Solution:                                                     │
+│    1. Ensure Docker is running                               │
+│    2. Start services: docker compose up -d                   │
+│    3. Check logs: docker compose logs -f                     │
+│                                                                │
+│  Problem: Port already in use                                 │
+│  Solution:                                                     │
+│    1. Find process: lsof -i :3000                            │
+│    2. Kill it: kill -9 <PID>                                 │
+│    3. Or use different port in docker-compose.yml            │
+│                                                                │
+└────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────┐
+│               🎯 QUICK START (COPY & PASTE) 🎯                │
+│                                                                │
+│  # Start everything                                           │
+│  docker compose up -d                                         │
+│                                                                │
+│  # Wait 1 minute, then test backend                           │
+│  curl http://localhost:8000/health                            │
+│                                                                │
+│  # Open frontend (wait 5 min for first build)                │
+│  # In your browser:                                           │
+│  http://localhost:3000                                        │
+│                                                                │
+│  # Login with:                                                │
+│  admin@example.com / admin123                                 │
+│                                                                │
+└────────────────────────────────────────────────────────────────┘
+
+╔════════════════════════════════════════════════════════════════╗
+║                                                                ║
+║  🎉 SUMMARY: Open http://localhost:3000 in your browser! 🎉   ║
+║                                                                ║
+║  That's where your FSM SaaS Platform application lives!       ║
+║                                                                ║
+╚════════════════════════════════════════════════════════════════╝
+
+📖 For more details, see: ACCESS_GUIDE.md

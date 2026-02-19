@@ -2,6 +2,25 @@
 
 A production-ready Field Service Management SaaS application with ML-driven scheduling and risk-aware routing.
 
+## 🌐 **WHERE TO ACCESS THE APPLICATION**
+
+**Main Application URL:** 
+```
+http://localhost:3000
+```
+
+**API Documentation:**
+```
+http://localhost:8000/api/v1/docs
+```
+
+**Login Credentials:**
+- **Admin:** admin@example.com / admin123
+- **Technician:** tech1@example.com / admin123
+- **Customer:** customer1@example.com / admin123
+
+📖 **See [HOW_TO_ACCESS.txt](HOW_TO_ACCESS.txt) or [ACCESS_GUIDE.md](ACCESS_GUIDE.md) for complete details**
+
 ## 🚀 Features
 
 - **Multi-role Authentication**: JWT-based auth for Admin, Technician, and Customer roles
